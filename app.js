@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', getCards);
 app.use(users);
 
-app.get('/:nonexistentPage', (req, res) => {
+app.use('/:nonexistentPage', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
 });
 
